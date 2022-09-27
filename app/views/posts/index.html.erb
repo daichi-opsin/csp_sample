@@ -1,0 +1,15 @@
+<h1>Index</h1>
+<p><%= link_to '作成', new_post_path %></p>
+<table>
+    <tbody>
+        <% @posts.each do |post| %>
+            <tr>
+                <td><%= post.id %></td>
+                <td><%= post.name %></td>
+                <td><%= link_to '表示（Rails準拠）', post_path(post, rails: true)%></td>
+                <td><%= link_to '表示（CSPあり）', post_path(post, with_csp: true)%></td>
+                <td><%= link_to '表示（CSPなし）', post_path(post)%></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

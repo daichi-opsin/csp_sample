@@ -1,0 +1,9 @@
+<h1>New</h1>
+<p><%= link_to '一覧', posts_path %></p>
+<%= form_with model: Post.new do |f| %>
+<ul>
+    <li><%= f.label :name %><%= f.text_field :name %></li>
+    <li><%= f.label :post %><%= f.text_area :post %></li>
+    <li><%= f.submit %></li>
+</ul>
+<% end %>

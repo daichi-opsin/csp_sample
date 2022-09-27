@@ -1,0 +1,14 @@
+<h1>Show</h1>
+<p><%= link_to '一覧', posts_path %></p>
+<% if params[:rails] %>
+    <h2>標準</h2>
+    <input value="<%= @post.name %>">
+    <p><%= @post.post %></p>
+<% else %>
+    <h2>ホワイトリスト</h2>
+    <input value="<%= sanitize @post.name %>">
+    <p><%= sanitize @post.post %></p>
+    <h2>Row HTML</h2>
+    <input value="<%= @post.name.html_safe %>">
+    <p><%= @post.post.html_safe %></p>
+<% end %>
